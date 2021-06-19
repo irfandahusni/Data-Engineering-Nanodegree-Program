@@ -48,5 +48,5 @@ The log files in the dataset you'll be working with are partitioned by year and 
   3. <strong>artist</strong> : artist_id, name, location, latitude, longitude
   4. <strong>time</strong> : start_time, hour, day, week, month, year, weekday
 
-`![database schema](https://github.com/irfandahusni/Data-Engineering-Nanodegree-Program/blob/main/1.%20Songplay%20Analysis/picture/songStartupERD.png?raw=true)
+`![database schema](https://github.com/irfandahusni/Data-Engineering-Nanodegree-Program/blob/main/1.%20Songplay%20Analysis/picture/songstartupERD.png?raw=true)
 
