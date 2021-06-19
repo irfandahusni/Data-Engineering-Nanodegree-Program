@@ -13,8 +13,7 @@ In this project, you'll apply what you've learned on data modeling with Postgres
 ## Dataset
 ### 1. Song Dataset 
 
-The first dataset is song dataset, where the files directory look like these
-source : [here](https://labrosa.ee.columbia.edu/millionsong/)
+The first dataset is song dataset from this source : [here](https://labrosa.ee.columbia.edu/millionsong/), where the files directory look like these
 
  `song_data/A/B/C/TRABCEI128F424C983.json`
 <br>
