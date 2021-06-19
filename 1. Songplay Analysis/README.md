@@ -39,13 +39,14 @@ The log files in the dataset you'll be working with are partitioned by year and 
 
 ## Database Schema
 <strong>Fact Table</strong>
-1. <strong>songplays</strong> - records in log data associated with song plays i.e. records with page `NextSong` \
+1. <strong>songplays</strong> - records in log data associated with song plays i.e. records with page `NextSong`
       * songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 
 <strong>Dimension Table</strong>
-2. <strong>users</strong> \       * user_id, first_name, last_name, gender, level
-3. <strong>songs</strong> \       * song_id, title, artist_id, year, duration
-4. <strong>artist</strong> \      * artist_id, name, location, latitude, longitude
-5. <strong>time</strong> \        * start_time, hour, day, week, month, year, weekday
+  1. <strong>users</strong> : user_id, first_name, last_name, gender, level
+  2. <strong>songs</strong> : song_id, title, artist_id, year, duration
+  3. <strong>artist</strong> : artist_id, name, location, latitude, longitude
+  4. <strong>time</strong> : start_time, hour, day, week, month, year, weekday
+
 
 
