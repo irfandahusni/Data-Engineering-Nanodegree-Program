@@ -35,7 +35,7 @@ partitioned by year and month. This is a sample path to two a file in this datas
 
 The database schema forms a star schema that has 1 <i>fact</i> table (songplays) and 4 <i>dimension</i> tables (users, songs, artist. time). 
 
-`![database schema](https://github.com/irfandahusni/Data-Engineering-Nanodegree-Program/blob/main/1.%20Songplay%20Analysis/picture/songstartupERD.png?raw=true)
+`![database schema](https://github.com/irfandahusni/Data-Engineering-Nanodegree-Program/blob/main/1.%20Songplay%20Analysis/picture/ERD.png?raw=true)
 
 ## ETL Pipeline 
 ### 1. Song Dataset ETL
