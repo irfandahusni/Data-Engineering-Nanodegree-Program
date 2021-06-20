@@ -67,6 +67,47 @@ and below is the sample data of the artists table
 |--------------------|-----------|-----------------|-----------|-----------|
 | ARD7TVE1187B99BFB1 | Casual    | California - LA | -         | -         |
 
-### 2. 
+### 2. Log Dataset ETL 
 
+The log dataset is used to produce users and time table. The raw dataset looks like this 
+
+```json
+{
+ "artist":null,
+ "auth":"Logged In",
+ "firstName":"Walter",
+ "gender":"M",
+ "itemInSession":0,
+ "lastName":"Frye",
+ "length":null,
+ "level":"free","location":"San Francisco-Oakland-Hayward,  CA",
+ "method":"GET",
+ "page":"Home",
+ "registration":1540919166796.0,
+ "sessionId":38,
+ "song":null,
+ "status":200,
+ "ts":1541105830796,
+ "userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"39"
+ }
+```
+The name index then extracted to the users and time table where they look like these
+
+<strong>Time Table</strong>
+| start_time                 | hour | day | week | month | year | weekday |
+|----------------------------|------|-----|------|-------|------|---------|
+| 2018-11-30 00:22:07.796000 | 0    | 30  | 48   | 11    | 2018 | 4       |
+
+<strong>Users Table</strong>
+| user_id | first_name | last_name | gender | level |
+|---------|------------|-----------|--------|-------|
+| 91      | Jayden     | Bell      | M      | free  |
+
+### 3. Create Songplays Table 
+Songplays table is generated using `INNER JOIN` of `artist` table and `users` table where the end result looks like this 
+
+
+| songplay_id | start_time                 | user_id | level | song_id | artist_id | session_id | location                            | user_agent                                                                                                              |
+|-------------|----------------------------|---------|-------|---------|-----------|------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| 1           | 2018-11-30 01:08:41.796000	 | 73      | paid  | -       | -         | 1049       | Tampa-St. Petersburg-Clearwater, FL | "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2" |
 
