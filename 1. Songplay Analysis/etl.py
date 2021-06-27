@@ -6,6 +6,16 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+        Read the song file and insert the data to songs and artist tables
+        
+            Args :
+                cur(psycopg2.cursor): psycopg2 cursor
+                filepath(str): file location
+                
+            Returns : 
+                None
+    """
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -19,6 +29,17 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+   """
+        Read the log file, filter by 'NextSong' page, convert timestamp do datetime, 
+        and insert the data to users, time and songplays tables
+        
+            Args :
+                cur(psycopg2.cursor): psycopg2 cursor
+                filepath(str): file location
+                
+            Returns : 
+                None
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -60,6 +81,19 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+        Get all file in the directory and execute the corresponding function
+        
+            Args:
+                cur(psycopg2.cursor): psycopg2 cursor
+                conn(psycopg2.connection): the database connection
+                filepath(str): file location
+                func(function): function to execute
+            
+            Returns:
+                None
+                
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
